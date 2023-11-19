@@ -1,0 +1,12 @@
+C:\Users\Маша\source\repos\system_control\system_control.Domain\bin\Debug\net7.0\system_control.Domain.deps.json
+C:\Users\Маша\source\repos\system_control\system_control.Domain\bin\Debug\net7.0\system_control.Domain.dll
+C:\Users\Маша\source\repos\system_control\system_control.Domain\bin\Debug\net7.0\system_control.Domain.pdb
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\system_control.Domain.csproj.AssemblyReference.cache
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\system_control.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\system_control.Domain.AssemblyInfoInputs.cache
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\system_control.Domain.AssemblyInfo.cs
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\system_control.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\system_control.Domain.dll
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\refint\system_control.Domain.dll
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\system_control.Domain.pdb
+C:\Users\Маша\source\repos\system_control\system_control.Domain\obj\Debug\net7.0\ref\system_control.Domain.dll

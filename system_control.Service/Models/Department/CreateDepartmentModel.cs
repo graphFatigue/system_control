@@ -1,0 +1,15 @@
+﻿using BLL.Mappings;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BLL.Models.Department
+{
+    public class CreateDepartmentModel : IMapTo<Core.Entity.Department>
+    {
+        public string? Address { get; set; }
+        public string? OrganizationName { get; set; }
+    }
+}

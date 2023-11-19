@@ -1,0 +1,5 @@
+C:\Users\Маша\source\repos\system_control\system_control.Service\obj\Debug\net7.0\system_control.Service.csproj.AssemblyReference.cache
+C:\Users\Маша\source\repos\system_control\system_control.Service\obj\Debug\net7.0\system_control.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Маша\source\repos\system_control\system_control.Service\obj\Debug\net7.0\system_control.Service.AssemblyInfoInputs.cache
+C:\Users\Маша\source\repos\system_control\system_control.Service\obj\Debug\net7.0\system_control.Service.AssemblyInfo.cs
+C:\Users\Маша\source\repos\system_control\system_control.Service\obj\Debug\net7.0\system_control.Service.csproj.CoreCompileInputs.cache
