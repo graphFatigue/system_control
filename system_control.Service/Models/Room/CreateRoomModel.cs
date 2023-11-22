@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Models.Room
 {
-    public class CreateRoomModel : IMapTo<Core.Entity.Organization>
+    public class CreateRoomModel : IMapTo<Core.Entity.Room>
     {
         public int Number {  get; set; }
         public int Floor { get; set; }

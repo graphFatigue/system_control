@@ -2,6 +2,7 @@
 using BLL.Models.Settings;
 using BLL.Services.Interfaces;
 using Core.Entity;
+using Core.Enum;
 using Google.Apis.Auth;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -19,6 +20,7 @@ namespace BLL.Services
     {
         private readonly JwtSettings _jwtSettings;
         private readonly GoogleSettings _googleSettings;
+        //add users
 
         public JwtService(
             IOptions<JwtSettings> jwtSettings,
@@ -40,19 +42,23 @@ namespace BLL.Services
         {
             var claims = new List<Claim>
         {
-            new(JwtRegisteredClaimNames.Sub, user.Id.ToString())
+            new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new (ClaimTypes.Role, "Admin")
         };
 
-            // Add roles of the user to the claims 
+            //claims.AddRange()// Add roles of the user to the claims 
 
             return claims;
         }
 
         public Task<List<Claim>> GetClaimsAsync(string name)
         {
+
             return Task.FromResult(new List<Claim>
         {
             new(JwtRegisteredClaimNames.Name, name),
+            new (ClaimTypes.Role, name)
+
            // Add a "Guest" role if necessarry
         });
         }

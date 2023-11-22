@@ -45,8 +45,13 @@ namespace system_control.Extensions
 
             builder.AddSignInManager<SignInManager<User>>();
 
+            //builder.AddRoleManager<RoleManager<IdentityRole>>();
+
             builder.AddEntityFrameworkStores<AppDbContext>()
+                //.AddRoles<IdentityRole>()
                 .AddDefaultTokenProviders();
+
+            //builder.AddRoles<IdentityRole>();
         }
 
         public static void ConfigureFluentValidation(

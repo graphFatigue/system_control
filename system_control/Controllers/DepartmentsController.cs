@@ -1,5 +1,6 @@
 ﻿using BLL.Models.Department;
 using BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sieve.Models;
 
@@ -37,6 +38,7 @@ namespace system_control.Controllers
             return Ok(department);
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateDepartmentModel createDepartmentModel)
         {
@@ -44,6 +46,7 @@ namespace system_control.Controllers
             return CreatedAtRoute(nameof(GetDepartmentById), new { id = department.Id }, department);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, UpdateDepartmentModel updateDepartmentModel)
         {
@@ -51,6 +54,7 @@ namespace system_control.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

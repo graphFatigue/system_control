@@ -1,5 +1,8 @@
 ﻿using BLL.Models.Organization;
 using BLL.Services.Interfaces;
+using Core.Entity;
+using Core.Enum;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sieve.Models;
 
@@ -37,13 +40,15 @@ namespace system_control.Controllers
             return Ok(organization);
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateOrganizationModel createOrganizationModel)
         {
-            var organization = await _organizationService.CreateAsync(createOrganizationModel);
-            return CreatedAtRoute(nameof(GetOrganizationById), new { id = organization.Id }, organization);
+                var organization = await _organizationService.CreateAsync(createOrganizationModel);
+                return CreatedAtRoute(nameof(GetOrganizationById), new { id = organization.Id }, organization);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, UpdateOrganizationModel updateOrganizationModel)
         {
@@ -51,6 +56,7 @@ namespace system_control.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

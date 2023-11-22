@@ -1,5 +1,6 @@
 ﻿using BLL.Models.Admin;
 using BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sieve.Models;
 
@@ -44,6 +45,7 @@ namespace system_control.Controllers
             return CreatedAtRoute(nameof(GetAdminById), new { id = admin.Id }, admin);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, UpdateAdminModel updateAdminModel)
         {
@@ -51,6 +53,7 @@ namespace system_control.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

@@ -1,5 +1,6 @@
 ﻿using BLL.Models.Staff;
 using BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sieve.Models;
 
@@ -37,6 +38,7 @@ namespace system_control.Controllers
             return Ok(staff);
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Post(CreateStaffModel createStaffModel)
         {
@@ -44,6 +46,7 @@ namespace system_control.Controllers
             return CreatedAtRoute(nameof(GetStaffById), new { id = staff.Id }, staff);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, UpdateStaffModel updateStaffModel)
         {
@@ -51,6 +54,7 @@ namespace system_control.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

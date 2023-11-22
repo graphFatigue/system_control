@@ -5,12 +5,7 @@ using BLL.Services.Interfaces;
 using Core.Entity;
 using Core.Exceptions.Auth;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -56,6 +51,8 @@ namespace BLL.Services
             var claims = await _jwtService.GetClaimsAsync(user);
             var signingCredentials = _jwtService.GetSigningCredentials();
             var token = _jwtService.GenerateToken(signingCredentials, claims);
+
+            //await _signInManager.SignInAsync(user, true);
 
             return new JwtTokenModel
             {

@@ -1,6 +1,8 @@
 ﻿using BLL.Models.Visit;
+using BLL.Services;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Sieve.Models;
 
 namespace system_control.Controllers
 {
@@ -19,6 +21,13 @@ namespace system_control.Controllers
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _visitService.GetAllAsync());
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllWithFilter([FromQuery] SieveModel sieveModel)
+        {
+            var visits = await _visitService.GetAllWithFilterAsync(sieveModel);
+            return Ok(visits);
         }
 
         [HttpPost]
